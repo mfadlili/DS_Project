@@ -1,0 +1,5 @@
+Link dataset adalah :
+https://www.kaggle.com/datasets/raghavrpotdar/fresh-and-stale-images-of-fruits-and-vegetables
+
+Link deployment adalah :
+https://fadlil10-ml2p2-frontend.herokuapp.com/
