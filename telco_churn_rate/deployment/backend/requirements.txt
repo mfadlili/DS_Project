@@ -1,0 +1,5 @@
+waitress
+pandas
+flask
+tensorflow-cpu
+scikit-learn == 1.0.2
