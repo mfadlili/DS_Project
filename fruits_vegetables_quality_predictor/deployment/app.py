@@ -31,22 +31,27 @@ dict_class = {0: 'Fresh Apple',
  10: 'Stale Orange',
  11: 'Stale Tomato'}
 
-file = st.file_uploader("", type=["jpg","png"])
+select = st.selectbox('Please select image source:', ('Upload image', 'Take a photo'))
 model = load_model("fruit_veg_model.h5")
+if select=='Upload image':
+    file = st.file_uploader("", type=["jpg","png"])
+    col1, col2 = st.columns(2)
 
-col1, col2 = st.columns(2)
+    with col2:
+        if st.button('Show the image'):
+            if file is not None:
+                st.image(file)
 
-with col2:
-    if st.button('Show the image'):
-        if file is not None:
-            st.image(file)
-
-with col1:
-    if st.button('Predict'):
-        img = image.load_img(file, target_size=(128,128))
+    with col1:
+        if st.button('Predict'):
+            img = image.load_img(file, target_size=(128,128))
+            x = image.img_to_array(img)
+            classes = np.argmax(model.predict(np.array([x])/255))
+            st.title(dict_class[classes])
+else:
+    picture = st.camera_input('Ambil foto anda.')
+    if st.button('Predict '):
+        img = image.load_img(picture, target_size=(128,128))
         x = image.img_to_array(img)
         classes = np.argmax(model.predict(np.array([x])/255))
         st.title(dict_class[classes])
-
-
-
