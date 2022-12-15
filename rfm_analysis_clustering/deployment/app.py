@@ -19,12 +19,12 @@ selected = st.sidebar.selectbox('Select Page: ', ['Business Overview', 'RFM'])
 
 @st.cache(allow_output_mutation=True)
 def load_data1():
-    data = pd.read_csv('deployment/eda_2020_ready_sample10%.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/mfadlili/DS_Project/main/rfm_analysis_clustering/deployment/eda_2020_ready_sample10%25.csv')
     return data
 
 @st.cache(allow_output_mutation=True)
 def load_data2():
-    data = pd.read_csv('deployment/rfm_2020_sample.csv')
+    data = pd.read_csv('https://raw.githubusercontent.com/mfadlili/DS_Project/main/rfm_analysis_clustering/deployment/rfm_2020_sample.csv')
     return data
 
 eda_2020 = load_data1()
