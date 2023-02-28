@@ -32,7 +32,7 @@ dict_class = {0: 'Fresh Apple',
  11: 'Stale Tomato'}
 
 select = st.selectbox('Please select image source:', ('Upload image', 'Take a photo'))
-model = load_model("fruit_veg_model.h5")
+model = load_model("https://github.com/mfadlili/DS_Project/blob/main/fruits_vegetables_quality_predictor/deployment/fruit_veg_model.h5?raw=true")
 if select=='Upload image':
     file = st.file_uploader("", type=["jpg","png"])
     col1, col2 = st.columns(2)
