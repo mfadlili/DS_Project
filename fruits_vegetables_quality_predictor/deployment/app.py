@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 st.title('Fruit and Vegetable Quality Predictor')
-st.image('deployment/fruits_vegetables.jpg')
+#  st.image('deployment/fruits_vegetables.jpg')
 st.write('Only photos of apples, bananas, bitter gourd, capsicum, oranges, and tomatoes can be used to create predictions using this application. ')
 dict_class = {0: 'Fresh Apple',
  1: 'Fresh Banana',
